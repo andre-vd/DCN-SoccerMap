@@ -14,11 +14,11 @@ Traditional approaches to handling these variations rely on building training da
 
 While traditional CNNs are relatively standard for vision tasks, they are inherently limited in modeling large, unknown transformations due to their fixed geometric structure in input sampling. 
 
-<img title="" src="file:///C:/Users/Andre/AppData/Roaming/marktext/images/2024-11-03-14-53-01-image.png" alt="" width="149" data-align="center">
+<img title="" src="./plots/CNNPaperImage.PNG" alt="" width="149" data-align="center">
 
 Unlike standard CNN's, where the receptive field is fixed, Deformable Convolution Networks can dynamically adjust the position of each sampling point in response to the input features through learnt offsets, allowing the network to better capture local transformations. These learned transformations are dense, making DCNs particularly powerful for tasks that require precise spatial understanding.
 
-                            <img title="" src="file:///C:/Users/Andre/AppData/Roaming/marktext/images/2024-11-03-14-39-51-image.png" alt="" width="287" data-align="inline"><img title="" src="file:///C:/Users/Andre/AppData/Roaming/marktext/images/2024-11-03-14-41-05-image.png" alt="" width="154" data-align="inline">
+                            <img title="" src="./plots/DCNArch.PNG" alt="" width="287" data-align="inline"><img title="" src="./plots/DCNPaperImage.PNG" alt="" width="154" data-align="inline">
 
 ## Proposition
 
