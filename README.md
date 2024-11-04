@@ -28,7 +28,7 @@ Our approach will aim to replicate (within constraints) the experimental procedu
 
 Some initial ideas on why this may be effective:
 
-- Improvements in modeling geometric demoration and spatial influence.
+- Improvements in modeling geometric deformation and spatial influence.
 - More sample efficient, similar to how DCN's improved data limitation issues with CNN training, SoccerMap with DCN may be able to create more accurate probability estimations with less data.
 - If it is more sample efficient, we can improve models by creating individual statistical models for specific tactics, teams, or playstyles. The data collection constraints will be less taxing.
 - Deformable convolution may better approximate the biological ability to make flexible, context-dependent connections compared to regular convolution. We may be able to create probability distributions that are less 'gradient' and more intuitive, potentially resulting in patterns that are easier to interpret. (Reaching? Maybe...)
@@ -77,23 +77,23 @@ The SoccerMap model implementation is sourced from un-xPass, since substituting 
 
 ### Positions (att, def)
 
-      <img title="" src="file:///C:/Users/Andre/Desktop/DCN_SoccerMap/plots/Test_Positions.png" alt="" width="281"><img title="" src="file:///C:/Users/Andre/Desktop/DCN_SoccerMap/plots/Test_Positions_DCN_2x.png" alt="" data-align="inline" width="280">
+      <img title="" src="./plots/Test_Positions.png" alt="" width="281"><img title="" src="./plots/Test_Positions_DCN_2x.png" alt="" data-align="inline" width="280">
 
 ### Velocities (att, def)
 
-    <img src="file:///C:/Users/Andre/Desktop/DCN_SoccerMap/plots/Test_Sparse_Velocity.png" title="" alt="" width="294"><img title="" src="file:///C:/Users/Andre/Desktop/DCN_SoccerMap/plots/Test_Sparse_Velocity_DCN.png" alt="" width="292">
+    <img src="./plots/Test_Sparse_Velocity.png" title="" alt="" width="294"><img title="" src="./plots/Test_Sparse_Velocity_DCN.png" alt="" width="292">
 
 ### Distances (goal, ball)
 
-    <img src="file:///C:/Users/Andre/Desktop/DCN_SoccerMap/plots/Test_Dense_Distance.png" title="" alt="" width="293"><img src="file:///C:/Users/Andre/Desktop/DCN_SoccerMap/plots/Test_Dense_Distance_DCN.png" title="" alt="" width="291">
+    <img src="./plots/Test_Dense_Distance.png" title="" alt="" width="293"><img src="./plots/Test_Dense_Distance_DCN.png" title="" alt="" width="291">
 
 ### Angles (goal, ball)
 
-    <img src="file:///C:/Users/Andre/Desktop/DCN_SoccerMap/plots/Test_Dense_Angles.png" title="" alt="" width="292"><img src="file:///C:/Users/Andre/Desktop/DCN_SoccerMap/plots/Test_Dense_Angles_DCN.png" title="" alt="" width="287">
+    <img src="./plots/Test_Dense_Angles.png" title="" alt="" width="292"><img src="./plots/Test_Dense_Angles_DCN.png" title="" alt="" width="287">
 
 ### Angles (carrier vel, team vel)
 
-    <img src="file:///C:/Users/Andre/Desktop/DCN_SoccerMap/plots/Test_Sparse_Angles.png" title="" alt="" width="291"><img src="file:///C:/Users/Andre/Desktop/DCN_SoccerMap/plots/Test_Sparse_Angles_DCN.png" title="" alt="" width="291">
+    <img src="./plots/Test_Sparse_Angles.png" title="" alt="" width="291"><img src="./plots/Test_Sparse_Angles_DCN.png" title="" alt="" width="291">
 
 Given these channel specific distributions, we are able to deduce that the channels built off the sparse matrices have the most significant results when processed by the DCN. We say significant as the DCNs appear to preform as intended. This lines up with the theory, as the geometric demormations will be more pronounced in a sparse matrix. To implement this, we modified the model architecture to process the 8 channels derived from the sparse matrices through deformable convolutional layers, while the remaining 5 channels pass through standard convolutional layers. This was achieved by splitting the input tensor based on channel indices and directing each subset through its respective feature extraction pathway. 
 
@@ -101,15 +101,15 @@ Given these channel specific distributions, we are able to deduce that the chann
 
 ### Default SoccerMap
 
-<img title="" src="file:///C:/Users/Andre/Desktop/DCN_SoccerMap/plots/SoccerMap_PassProb.png" alt="" data-align="center" width="334">
+<img title="" src="./plots/SoccerMap_PassProb.png" alt="" data-align="center" width="334">
 
 ### SoccerMap DCN no Channel Split
 
-<img title="" src="file:///C:/Users/Andre/Desktop/DCN_SoccerMap/plots/SoccerMapDCNNoSplit_PassProb.png" alt="" data-align="center" width="332">
+<img title="" src="./plots/SoccerMapDCNNoSplit_PassProb.png" alt="" data-align="center" width="332">
 
 ### SoccerMap DCN with Channel Split
 
-<img title="" src="file:///C:/Users/Andre/Desktop/DCN_SoccerMap/plots/SoccerMapDCNSplit_PassProb.png" alt="" data-align="center" width="329">
+<img title="" src="./plots/SoccerMapDCNSplit_PassProb.png" alt="" data-align="center" width="329">
 
 ### To continue
 
