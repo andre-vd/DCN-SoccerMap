@@ -28,7 +28,7 @@ Our approach will aim to replicate (within constraints) the experimental procedu
 
 Some initial ideas on why this may be effective:
 
-- Improvements in modeling geometric demoration and spatial influence.
+- Improvements in modeling geometric deformation and spatial influence.
 - More sample efficient, similar to how DCN's improved data limitation issues with CNN training, SoccerMap with DCN may be able to create more accurate probability estimations with less data.
 - If it is more sample efficient, we can improve models by creating individual statistical models for specific tactics, teams, or playstyles. The data collection constraints will be less taxing.
 - Deformable convolution may better approximate the biological ability to make flexible, context-dependent connections compared to regular convolution. We may be able to create probability distributions that are less 'gradient' and more intuitive, potentially resulting in patterns that are easier to interpret. (Reaching? Maybe...)
