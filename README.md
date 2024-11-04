@@ -77,7 +77,7 @@ The SoccerMap model implementation is sourced from un-xPass, since substituting 
 
 ### Positions (att, def)
 
-      <img title="" src="file:///C:/Users/Andre/Desktop/DCN_SoccerMap/plots/Test_Positions.png" alt="" width="281"><img title="" src="file:///C:/Users/Andre/Desktop/DCN_SoccerMap/plots/Test_Positions_DCN_2x.png" alt="" data-align="inline" width="280">
+      <img title="" src="file:///./plots/Test_Positions.png" alt="" width="281"><img title="" src="file:///./plots/Test_Positions_DCN_2x.png" alt="" data-align="inline" width="280">
 
 ### Velocities (att, def)
 
